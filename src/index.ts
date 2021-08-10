@@ -14,11 +14,11 @@ const pdfFill = {
     data,
     pdfPath,
     tempPath,
-    options = [],
+    options = ['need_appearances'],
   }: {
     data: FillData;
     pdfPath: string;
-    options: string[];
+    options?: string[];
     tempPath?: string;
   }): Promise<Buffer> {
     if (!data || typeof data !== 'object') {
