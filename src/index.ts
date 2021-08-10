@@ -14,9 +14,11 @@ const pdfFill = {
     data,
     pdfPath,
     tempPath,
+    options = [],
   }: {
     data: FillData;
     pdfPath: string;
+    options: string[];
     tempPath?: string;
   }): Promise<Buffer> {
     if (!data || typeof data !== 'object') {
@@ -43,8 +45,9 @@ const pdfFill = {
     // write xdfd for pdftk
     await fsp.writeFile(xfdfFile, _xfdf);
     // run pdftk (it returns shit...only on error)
+    console.log('Command', `${_pdfPath} fill_form ${xfdfFile} output ${generatedPdfFile} ${options.join(' ')}`);
     await this.execPdftk(
-      `${_pdfPath} fill_form ${xfdfFile} output ${generatedPdfFile} need_appearances`
+      `${_pdfPath} fill_form ${xfdfFile} output ${generatedPdfFile} ${options.join(' ')}`
     );
 
     const file = await fsp.readFile(generatedPdfFile);
