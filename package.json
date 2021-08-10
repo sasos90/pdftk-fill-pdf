@@ -33,7 +33,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "pdftk-fill-pdf",
+  "name": "pdftk-fill-pdf-options",
   "module": "dist/pdftk-fill-pdf.esm.js",
   "size-limit": [
     {
@@ -47,12 +47,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maielo/pdftk-fill-pdf.git"
+    "url": "git+https://github.com/sasos90/pdftk-fill-pdf.git"
   },
   "bugs": {
-    "url": "https://github.com/maielo/pdftk-fill-pdf/issues"
+    "url": "https://github.com/sasos90/pdftk-fill-pdf/issues"
   },
-  "homepage": "https://github.com/maielo/pdftk-fill-pdf#readme",
+  "homepage": "https://github.com/sasos90/pdftk-fill-pdf#readme",
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.1",
     "husky": "^5.1.3",
@@ -76,5 +76,8 @@
     "UTF8",
     "pdftk",
     "xfdf"
-  ]
+  ],
+  "dependencies": {
+    "np": "^7.5.0"
+  }
 }
